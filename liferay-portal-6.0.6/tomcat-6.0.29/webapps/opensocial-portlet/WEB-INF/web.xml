@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+	<display-name>opensocial-portlet</display-name>
+	<context-param>
+		<param-name>guice-modules</param-name>
+		<param-value>org.apache.shindig.common.PropertiesModule: org.apache.shindig.gadgets.DefaultGuiceModule: org.apache.shindig.social.core.config.SocialApiGuiceModule: com.liferay.opensocial.shindig.guice.LiferayModule: org.apache.shindig.gadgets.oauth.OAuthModule: org.apache.shindig.common.cache.ehcache.EhCacheModule: org.apache.shindig.extras.ShindigExtrasGuiceModule: org.apache.shindig.extras.as.ActivityStreamsGuiceModule</param-value>
+	</context-param>
+	<filter>
+		<filter-name>Shindig Filter</filter-name>
+		<filter-class>com.liferay.opensocial.shindig.servlet.ShindigFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>authFilter</filter-name>
+		<filter-class>org.apache.shindig.auth.AuthenticationServletFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.cache.CacheFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pattern</param-name>
+			<param-value>2</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Cache Filter - Resource JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.cache.CacheFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pattern</param-name>
+			<param-value>2</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>ETag Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.etag.ETagFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>ETag Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.etag.ETagFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>GZip Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.gzip.GZipFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Header Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.header.HeaderFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-ignore-pattern</param-name>
+			<param-value>.+/-/.+</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=315360000, public</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Expires</param-name>
+			<param-value>315360000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Vary</param-name>
+			<param-value>Accept-Encoding</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Header Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.header.HeaderFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Cache-Control</param-name>
+			<param-value>max-age=315360000, public</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Expires</param-name>
+			<param-value>315360000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>Vary</param-name>
+			<param-value>Accept-Encoding</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Language Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.language.LanguageFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Minifier Filter</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.minifier.MinifierFilter</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>Minifier Filter - JSP</filter-name>
+		<filter-class>com.liferay.portal.kernel.servlet.PortalClassLoaderFilter</filter-class>
+		<init-param>
+			<param-name>filter-class</param-name>
+			<param-value>com.liferay.portal.servlet.filters.minifier.MinifierFilter</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url-regex-pattern</param-name>
+			<param-value>.+/(css|main)\.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Shindig Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/gadgets/api/rest/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/gadgets/api/rpc/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/gadgets/ifr</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/gadgets/makeRequest</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/rest/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/rpc/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>authFilter</filter-name>
+		<url-pattern>/social/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Header Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.gif</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.ico</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.jpg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter</filter-name>
+		<url-pattern>*.png</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ETag Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Cache Filter - Resource JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>GZip Filter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Language Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Minifier Filter - JSP</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.servlet.PortletContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.spring.context.PortletContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.liferay.opensocial.servlet.OpenSocialServletContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.apache.shindig.common.servlet.GuiceServletContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.liferay.portal.kernel.servlet.SerializableSessionAttributeListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>xml-to-html</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.GadgetRenderingServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>accel</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.HtmlAccelServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>proxy</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.ProxyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>makeRequest</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.MakeRequestServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>concat</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.ConcatProxyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>oauthCallback</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.OAuthCallbackServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>metadata</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.RpcServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>js</servlet-name>
+		<servlet-class>org.apache.shindig.gadgets.servlet.JsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>restapiServlet</servlet-name>
+		<servlet-class>org.apache.shindig.protocol.DataServiceServlet</servlet-class>
+		<init-param>
+			<param-name>handlers</param-name>
+			<param-value>org.apache.shindig.handlers</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>jsonRpcServlet</servlet-name>
+		<servlet-class>org.apache.shindig.protocol.JsonRpcServlet</servlet-class>
+		<init-param>
+			<param-name>handlers</param-name>
+			<param-value>org.apache.shindig.handlers</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>sampleOAuth</servlet-name>
+		<servlet-class>org.apache.shindig.social.sample.oauth.SampleOAuthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>1</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.opensocial.portlet.AdminPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>2</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.liferay.opensocial.portlet.GadgetPortlet</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>js</servlet-name>
+		<url-pattern>/gadgets/js/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>proxy</servlet-name>
+		<url-pattern>/gadgets/proxy/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>makeRequest</servlet-name>
+		<url-pattern>/gadgets/makeRequest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jsonRpcServlet</servlet-name>
+		<url-pattern>/gadgets/api/rpc/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jsonRpcServlet</servlet-name>
+		<url-pattern>/rpc/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jsonRpcServlet</servlet-name>
+		<url-pattern>/social/rpc/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>restapiServlet</servlet-name>
+		<url-pattern>/gadgets/api/rest/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>restapiServlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>restapiServlet</servlet-name>
+		<url-pattern>/social/rest/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>concat</servlet-name>
+		<url-pattern>/gadgets/concat</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>oauthCallback</servlet-name>
+		<url-pattern>/gadgets/oauthcallback</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>xml-to-html</servlet-name>
+		<url-pattern>/gadgets/ifr</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>accel</servlet-name>
+		<url-pattern>/gadgets/accel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>metadata</servlet-name>
+		<url-pattern>/gadgets/metadata</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sampleOAuth</servlet-name>
+		<url-pattern>/oauth/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>1</servlet-name>
+		<url-pattern>/1/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>2</servlet-name>
+		<url-pattern>/2/*</url-pattern>
+	</servlet-mapping>
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://java.sun.com/jsp/jstl/core</taglib-uri>
+			<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/aui</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-aui.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://java.sun.com/portlet_2_0</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-portlet.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/security</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-security.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/theme</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-theme.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/ui</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-ui.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://liferay.com/tld/util</taglib-uri>
+			<taglib-location>/WEB-INF/tld/liferay-util.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+</web-app>

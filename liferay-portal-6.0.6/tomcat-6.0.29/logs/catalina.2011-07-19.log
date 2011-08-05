@@ -1,0 +1,420 @@
+19 Jul, 2011 6:31:10 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\opt\java\jdk1.5.0_22\bin;C:\Python27;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Lib\site-packages\pyfacebook\bin;C:\apache-ant-1.8.2\bin;C:\opt\mysql\bin;C:\opt\apache-maven-2.2.1\bin;C:\opt\svn\bin\;E:\liferay-portal-6.0.6\tomcat-6.0.29\bin;C:\Ruby187\bin
+19 Jul, 2011 6:31:12 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:31:12 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 2726 ms
+19 Jul, 2011 6:31:12 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+19 Jul, 2011 6:31:12 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+19 Jul, 2011 6:31:12 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor ROOT.xml
+19 Jul, 2011 6:34:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel
+19 Jul, 2011 6:34:26 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel-theme
+19 Jul, 2011 6:34:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory chat-portlet
+19 Jul, 2011 6:34:33 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory default-site-templates-hook
+19 Jul, 2011 6:34:33 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory google-maps-portlet
+19 Jul, 2011 6:34:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory jedi-theme
+19 Jul, 2011 6:34:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory kaleo-web
+19 Jul, 2011 6:34:45 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mail-portlet
+19 Jul, 2011 6:34:52 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory my-layout
+19 Jul, 2011 6:34:53 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mytheme
+19 Jul, 2011 6:34:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory New Template
+19 Jul, 2011 6:34:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory new-theme
+19 Jul, 2011 6:34:59 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory opensocial-portlet
+19 Jul, 2011 6:35:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-new-portlet
+19 Jul, 2011 6:35:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-portlet
+19 Jul, 2011 6:35:10 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme
+19 Jul, 2011 6:35:11 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme-envision
+19 Jul, 2011 6:35:12 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory social-networking-portlet
+19 Jul, 2011 6:35:15 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory titan-theme
+19 Jul, 2011 6:35:16 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory tunnel-web
+19 Jul, 2011 6:35:20 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory web-form-portlet
+19 Jul, 2011 6:35:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wordpress-twenty-ten-theme
+19 Jul, 2011 6:35:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wsrp-portlet
+19 Jul, 2011 6:35:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ymd-theme
+19 Jul, 2011 6:35:34 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:35:35 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+19 Jul, 2011 6:35:35 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/160  config=null
+19 Jul, 2011 6:35:35 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 263015 ms
+19 Jul, 2011 6:45:49 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:45:50 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+19 Jul, 2011 6:45:57 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+19 Jul, 2011 6:46:04 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/opensocial-portlet] appears to have started a thread named [com.google.inject.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+19 Jul, 2011 6:46:04 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [com.google.inject.InjectorImpl$1@d4c535]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@df339e]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:46:04 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [org.apache.shindig.common.xml.XmlUtil$2@1b5fbc1]) and a value of type [org.apache.xerces.jaxp.DocumentBuilderImpl] (value [org.apache.xerces.jaxp.DocumentBuilderImpl@a36bf7]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:46:05 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/wsrp-portlet] created a ThreadLocal with key of type [org.apache.axis.utils.XMLUtils.ThreadLocalDocumentBuilder] (value [org.apache.axis.utils.XMLUtils$ThreadLocalDocumentBuilder@14349fe]) and a value of type [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl] (value [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl@aeed66]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:46:06 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:46:18 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\opt\java\jdk1.5.0_22\bin;C:\Python27;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Lib\site-packages\pyfacebook\bin;C:\apache-ant-1.8.2\bin;C:\opt\mysql\bin;C:\opt\apache-maven-2.2.1\bin;C:\opt\svn\bin\;E:\liferay-portal-6.0.6\tomcat-6.0.29\bin;C:\Ruby187\bin
+19 Jul, 2011 6:46:18 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:46:18 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 623 ms
+19 Jul, 2011 6:46:18 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+19 Jul, 2011 6:46:18 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+19 Jul, 2011 6:46:18 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor ROOT.xml
+19 Jul, 2011 6:46:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel
+19 Jul, 2011 6:46:55 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel-theme
+19 Jul, 2011 6:46:57 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory chat-portlet
+19 Jul, 2011 6:46:59 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory default-site-templates-hook
+19 Jul, 2011 6:47:00 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory google-maps-portlet
+19 Jul, 2011 6:47:01 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory jedi-theme
+19 Jul, 2011 6:47:02 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory kaleo-web
+19 Jul, 2011 6:47:06 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mail-portlet
+19 Jul, 2011 6:47:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory my-layout
+19 Jul, 2011 6:47:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mytheme
+19 Jul, 2011 6:47:11 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory New Template
+19 Jul, 2011 6:47:11 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory new-theme
+19 Jul, 2011 6:47:12 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory opensocial-portlet
+19 Jul, 2011 6:47:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-new-portlet
+19 Jul, 2011 6:47:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-portlet
+19 Jul, 2011 6:47:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme
+19 Jul, 2011 6:47:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme-envision
+19 Jul, 2011 6:47:25 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory social-networking-portlet
+19 Jul, 2011 6:47:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory titan-theme
+19 Jul, 2011 6:47:27 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory tunnel-web
+19 Jul, 2011 6:47:30 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory web-form-portlet
+19 Jul, 2011 6:47:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wordpress-twenty-ten-theme
+19 Jul, 2011 6:47:31 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wsrp-portlet
+19 Jul, 2011 6:47:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ymd-theme
+19 Jul, 2011 6:47:36 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:47:36 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+19 Jul, 2011 6:47:36 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/21  config=null
+19 Jul, 2011 6:47:36 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 77486 ms
+19 Jul, 2011 6:52:47 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:52:48 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+19 Jul, 2011 6:52:52 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+19 Jul, 2011 6:52:56 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/opensocial-portlet] appears to have started a thread named [com.google.inject.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+19 Jul, 2011 6:52:56 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [org.apache.shindig.common.xml.XmlUtil$2@144e6d4]) and a value of type [org.apache.xerces.jaxp.DocumentBuilderImpl] (value [org.apache.xerces.jaxp.DocumentBuilderImpl@8ea264]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:52:56 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [com.google.inject.InjectorImpl$1@4785c9]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@1a0504a]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:52:56 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/wsrp-portlet] created a ThreadLocal with key of type [org.apache.axis.utils.XMLUtils.ThreadLocalDocumentBuilder] (value [org.apache.axis.utils.XMLUtils$ThreadLocalDocumentBuilder@15a07b6]) and a value of type [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl] (value [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl@1b04599]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:52:56 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:53:02 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\opt\java\jdk1.5.0_22\bin;C:\Python27;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Lib\site-packages\pyfacebook\bin;C:\apache-ant-1.8.2\bin;C:\opt\mysql\bin;C:\opt\apache-maven-2.2.1\bin;C:\opt\svn\bin\;E:\liferay-portal-6.0.6\tomcat-6.0.29\bin;C:\Ruby187\bin
+19 Jul, 2011 6:53:02 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:53:02 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 313 ms
+19 Jul, 2011 6:53:02 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+19 Jul, 2011 6:53:02 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+19 Jul, 2011 6:53:02 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor ROOT.xml
+19 Jul, 2011 6:53:32 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel
+19 Jul, 2011 6:53:33 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel-theme
+19 Jul, 2011 6:53:33 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory chat-portlet
+19 Jul, 2011 6:53:34 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory default-site-templates-hook
+19 Jul, 2011 6:53:34 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory google-maps-portlet
+19 Jul, 2011 6:53:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory jedi-theme
+19 Jul, 2011 6:53:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory kaleo-web
+19 Jul, 2011 6:53:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mail-portlet
+19 Jul, 2011 6:53:39 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory my-layout
+19 Jul, 2011 6:53:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mytheme
+19 Jul, 2011 6:53:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory New Template
+19 Jul, 2011 6:53:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory new-theme
+19 Jul, 2011 6:53:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory opensocial-portlet
+19 Jul, 2011 6:53:46 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-new-portlet
+19 Jul, 2011 6:53:46 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-portlet
+19 Jul, 2011 6:53:46 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme
+19 Jul, 2011 6:53:47 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme-envision
+19 Jul, 2011 6:53:47 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory social-networking-portlet
+19 Jul, 2011 6:53:48 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory titan-theme
+19 Jul, 2011 6:53:48 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory tunnel-web
+19 Jul, 2011 6:53:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory web-form-portlet
+19 Jul, 2011 6:53:51 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wordpress-twenty-ten-theme
+19 Jul, 2011 6:53:51 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wsrp-portlet
+19 Jul, 2011 6:53:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ymd-theme
+19 Jul, 2011 6:53:54 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:53:54 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+19 Jul, 2011 6:53:54 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/32  config=null
+19 Jul, 2011 6:53:54 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 52159 ms
+19 Jul, 2011 6:55:38 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:55:39 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+19 Jul, 2011 6:55:43 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+19 Jul, 2011 6:55:46 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/opensocial-portlet] appears to have started a thread named [com.google.inject.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+19 Jul, 2011 6:55:46 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [org.apache.shindig.common.xml.XmlUtil$2@5e9a70]) and a value of type [org.apache.xerces.jaxp.DocumentBuilderImpl] (value [org.apache.xerces.jaxp.DocumentBuilderImpl@ed3461]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:55:46 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [com.google.inject.InjectorImpl$1@109f1ae]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@1d9fe05]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:55:47 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/wsrp-portlet] created a ThreadLocal with key of type [org.apache.axis.utils.XMLUtils.ThreadLocalDocumentBuilder] (value [org.apache.axis.utils.XMLUtils$ThreadLocalDocumentBuilder@8b2ee7]) and a value of type [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl] (value [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl@1b44519]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 6:55:47 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:55:51 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\opt\java\jdk1.5.0_22\bin;C:\Python27;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Lib\site-packages\pyfacebook\bin;C:\apache-ant-1.8.2\bin;C:\opt\mysql\bin;C:\opt\apache-maven-2.2.1\bin;C:\opt\svn\bin\;E:\liferay-portal-6.0.6\tomcat-6.0.29\bin;C:\Ruby187\bin
+19 Jul, 2011 6:55:52 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:55:52 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 309 ms
+19 Jul, 2011 6:55:52 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+19 Jul, 2011 6:55:52 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+19 Jul, 2011 6:55:52 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor ROOT.xml
+19 Jul, 2011 6:56:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel
+19 Jul, 2011 6:56:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel-theme
+19 Jul, 2011 6:56:22 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory chat-portlet
+19 Jul, 2011 6:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory default-site-templates-hook
+19 Jul, 2011 6:56:23 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory google-maps-portlet
+19 Jul, 2011 6:56:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory jedi-theme
+19 Jul, 2011 6:56:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory kaleo-web
+19 Jul, 2011 6:56:26 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mail-portlet
+19 Jul, 2011 6:56:28 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory my-layout
+19 Jul, 2011 6:56:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mytheme
+19 Jul, 2011 6:56:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory New Template
+19 Jul, 2011 6:56:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory new-theme
+19 Jul, 2011 6:56:29 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory opensocial-portlet
+19 Jul, 2011 6:56:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-new-portlet
+19 Jul, 2011 6:56:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-portlet
+19 Jul, 2011 6:56:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme
+19 Jul, 2011 6:56:35 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme-envision
+19 Jul, 2011 6:56:36 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory social-networking-portlet
+19 Jul, 2011 6:56:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory titan-theme
+19 Jul, 2011 6:56:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory tunnel-web
+19 Jul, 2011 6:56:39 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory web-form-portlet
+19 Jul, 2011 6:56:39 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wordpress-twenty-ten-theme
+19 Jul, 2011 6:56:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wsrp-portlet
+19 Jul, 2011 6:56:42 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ymd-theme
+19 Jul, 2011 6:56:43 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:56:43 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+19 Jul, 2011 6:56:43 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=1/25  config=null
+19 Jul, 2011 6:56:43 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 51391 ms
+19 Jul, 2011 6:59:54 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 6:59:55 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+19 Jul, 2011 6:59:59 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+19 Jul, 2011 7:00:02 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/opensocial-portlet] appears to have started a thread named [com.google.inject.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+19 Jul, 2011 7:00:02 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [com.google.inject.InjectorImpl$1@1ad13ee]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@1f7a57c]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:00:02 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [org.apache.shindig.common.xml.XmlUtil$2@191887e]) and a value of type [org.apache.xerces.jaxp.DocumentBuilderImpl] (value [org.apache.xerces.jaxp.DocumentBuilderImpl@1981e8a]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:00:03 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/wsrp-portlet] created a ThreadLocal with key of type [org.apache.axis.utils.XMLUtils.ThreadLocalDocumentBuilder] (value [org.apache.axis.utils.XMLUtils$ThreadLocalDocumentBuilder@1900e4]) and a value of type [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl] (value [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl@189a0ca]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:00:03 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 7:00:07 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: E:\liferay-portal-6.0.6\tomcat-6.0.29\jre1.6.0_20\win\bin;.;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;C:\opt\java\jdk1.5.0_22\bin;C:\Python27;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Lib\site-packages\pyfacebook\bin;C:\apache-ant-1.8.2\bin;C:\opt\mysql\bin;C:\opt\apache-maven-2.2.1\bin;C:\opt\svn\bin\;E:\liferay-portal-6.0.6\tomcat-6.0.29\bin;C:\Ruby187\bin
+19 Jul, 2011 7:00:07 AM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 7:00:07 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 304 ms
+19 Jul, 2011 7:00:07 AM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+19 Jul, 2011 7:00:07 AM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.29
+19 Jul, 2011 7:00:07 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor ROOT.xml
+19 Jul, 2011 7:00:36 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel
+19 Jul, 2011 7:00:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory bright-pixel-theme
+19 Jul, 2011 7:00:37 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory chat-portlet
+19 Jul, 2011 7:00:38 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory default-site-templates-hook
+19 Jul, 2011 7:00:39 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory google-maps-portlet
+19 Jul, 2011 7:00:39 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory jedi-theme
+19 Jul, 2011 7:00:40 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory kaleo-web
+19 Jul, 2011 7:00:42 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mail-portlet
+19 Jul, 2011 7:00:44 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory my-layout
+19 Jul, 2011 7:00:44 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory mytheme
+19 Jul, 2011 7:00:44 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory New Template
+19 Jul, 2011 7:00:44 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory new-theme
+19 Jul, 2011 7:00:44 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory opensocial-portlet
+19 Jul, 2011 7:00:49 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-new-portlet
+19 Jul, 2011 7:00:49 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory past-issues-portlet
+19 Jul, 2011 7:00:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme
+19 Jul, 2011 7:00:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory sample-theme-envision
+19 Jul, 2011 7:00:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory social-networking-portlet
+19 Jul, 2011 7:00:51 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory titan-theme
+19 Jul, 2011 7:00:51 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory tunnel-web
+19 Jul, 2011 7:00:53 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory web-form-portlet
+19 Jul, 2011 7:00:53 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wordpress-twenty-ten-theme
+19 Jul, 2011 7:00:54 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory wsrp-portlet
+19 Jul, 2011 7:00:57 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ymd-theme
+19 Jul, 2011 7:00:57 AM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 7:00:57 AM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+19 Jul, 2011 7:00:57 AM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/26  config=null
+19 Jul, 2011 7:00:57 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 50417 ms
+19 Jul, 2011 7:16:30 AM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-8080
+19 Jul, 2011 7:16:31 AM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+19 Jul, 2011 7:16:35 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+19 Jul, 2011 7:16:38 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/opensocial-portlet] appears to have started a thread named [com.google.inject.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+19 Jul, 2011 7:16:38 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [org.apache.shindig.common.xml.XmlUtil$2@588202]) and a value of type [org.apache.xerces.jaxp.DocumentBuilderImpl] (value [org.apache.xerces.jaxp.DocumentBuilderImpl@bf8e01]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:16:38 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/opensocial-portlet] created a ThreadLocal with key of type [null] (value [com.google.inject.InjectorImpl$1@3fa9a]) and a value of type [java.lang.Object[]] (value [[Ljava.lang.Object;@139bf8d]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:16:39 AM org.apache.catalina.loader.WebappClassLoader clearThreadLocalMap
+SEVERE: The web application [/wsrp-portlet] created a ThreadLocal with key of type [org.apache.axis.utils.XMLUtils.ThreadLocalDocumentBuilder] (value [org.apache.axis.utils.XMLUtils$ThreadLocalDocumentBuilder@b8707b]) and a value of type [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl] (value [com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl@e0c4a3]) but failed to remove it when the web application was stopped. This is very likely to create a memory leak.
+19 Jul, 2011 7:16:39 AM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-8080

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+>
+
+	<!-- Comparator -->
+
+	<bean id="com.liferay.portal.kernel.workflow.comparator.WorkflowLogComparatorFactoryUtil" class="com.liferay.portal.kernel.workflow.comparator.WorkflowComparatorFactoryUtil">
+		<property name="workflowComparatorFactory">
+			<bean class="com.liferay.portal.workflow.kaleo.comparator.WorkflowComparatorFactoryImpl" />
+		</property>
+	</bean>
+
+	<!-- Deployment -->
+
+	<bean id="com.liferay.portal.workflow.kaleo.deployment.WorkflowDeployer" class="com.liferay.portal.workflow.kaleo.deployment.DefaultWorkflowDeployer" />
+
+	<!-- Manager -->
+
+	<bean id="com.liferay.portal.kernel.workflow.WorkflowDefinitionManager" class="com.liferay.portal.workflow.kaleo.WorkflowDefinitionManagerImpl">
+		<property name="workflowEngine" ref="com.liferay.portal.workflow.kaleo.runtime.WorkflowEngine" />
+	</bean>
+	<bean id="com.liferay.portal.kernel.workflow.WorkflowEngineManager" class="com.liferay.portal.workflow.kaleo.WorkflowEngineManagerImpl" />
+	<bean id="com.liferay.portal.kernel.workflow.WorkflowInstanceManager" class="com.liferay.portal.workflow.kaleo.WorkflowInstanceManagerImpl">
+		<property name="workflowEngine" ref="com.liferay.portal.workflow.kaleo.runtime.WorkflowEngine" />
+	</bean>
+	<bean id="com.liferay.portal.kernel.workflow.WorkflowLogManager" class="com.liferay.portal.workflow.kaleo.WorkflowLogManagerImpl" />
+	<bean id="com.liferay.portal.kernel.workflow.WorkflowTaskManager" class="com.liferay.portal.workflow.kaleo.WorkflowTaskManagerImpl">
+		<property name="taskManager" ref="com.liferay.portal.workflow.kaleo.runtime.TaskManager" />
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.manager.PortalKaleoManager" class="com.liferay.portal.workflow.kaleo.manager.DefaultPortalKaleoManager">
+		<property name="defaultDefinitionName" value="Single Approver" />
+		<property name="definitionFiles">
+			<map>
+				<entry key="Single Approver" value="META-INF/definitions/single-approver-definition.xml" />
+			</map>
+		</property>
+		<property name="workflowDefinitionManager" ref="com.liferay.portal.kernel.workflow.WorkflowDefinitionManager" />
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.manager.PortalKaleoManagerUtil" class="com.liferay.portal.workflow.kaleo.manager.PortalKaleoManagerUtil">
+		<property name="portalKaleoManager" ref="com.liferay.portal.workflow.kaleo.manager.PortalKaleoManager" />
+	</bean>
+
+	<!-- Runtime -->
+
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.KaleoSignaler" class="com.liferay.portal.workflow.kaleo.runtime.DefaultKaleoSignaler">
+		<property name="destinationName" value="liferay/kaleo_graph_walker" />
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.TaskManager" class="com.liferay.portal.workflow.kaleo.runtime.DefaultTaskManagerImpl">
+		<property name="kaleoSignaler" ref="com.liferay.portal.workflow.kaleo.runtime.KaleoSignaler" />
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.WorkflowEngine" class="com.liferay.portal.workflow.kaleo.runtime.DefaultWorkflowEngineImpl">
+		<property name="kaleoSignaler" ref="com.liferay.portal.workflow.kaleo.runtime.KaleoSignaler" />
+		<property name="workflowDeployer" ref="com.liferay.portal.workflow.kaleo.deployment.WorkflowDeployer" />
+		<property name="workflowModelParser" ref="com.liferay.portal.workflow.kaleo.parser.WorkflowModelParser" />
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.action.ActionExecutorFactory" class="com.liferay.portal.workflow.kaleo.runtime.action.ActionExecutorFactory">
+		<property name="actionExecutors">
+			<map>
+				<entry key="groovy">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.action.ScriptActionExecutor" />
+				</entry>
+				<entry key="javascript">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.action.ScriptActionExecutor" />
+				</entry>
+				<entry key="python">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.action.ScriptActionExecutor" />
+				</entry>
+				<entry key="ruby">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.action.ScriptActionExecutor" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.graph.GraphWalker" class="com.liferay.portal.workflow.kaleo.runtime.graph.DefaultGraphWalker" />
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.node.NodeExecutorFactory" class="com.liferay.portal.workflow.kaleo.runtime.node.NodeExecutorFactory">
+		<property name="nodeExectors">
+			<map>
+				<entry key="FORK">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.node.ForkNodeExecutor" />
+				</entry>
+				<entry key="JOIN">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.node.JoinNodeExecutor" />
+				</entry>
+				<entry key="STATE">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.node.StateNodeExecutor" />
+				</entry>
+				<entry key="TASK">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.node.TaskNodeExecutor">
+						<property name="dueDateCalculator">
+							<bean class="com.liferay.portal.workflow.kaleo.runtime.calendar.DefaultDueDateCalculator" />
+						</property>
+						<property name="taskAssignmentSelector">
+							<bean class="com.liferay.portal.workflow.kaleo.runtime.assignment.GroupAwareTaskAssignmentSelector" />
+						</property>
+					</bean>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.notification.NotificationSenderFactory" class="com.liferay.portal.workflow.kaleo.runtime.notification.NotificationSenderFactory">
+		<property name="notificationSenders">
+			<map>
+				<entry key="email">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.EmailNotificationSender">
+						<property name="fromAddress" value="no-reply@liferay.com" />
+						<property name="fromName" value="Liferay Portal Workflow Notifications" />
+					</bean>
+				</entry>
+				<entry key="im">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.IMNotificationSender" />
+				</entry>
+				<entry key="private-message">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.PrivateMessageNotificationSender" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="com.liferay.portal.workflow.kaleo.runtime.notification.NotificationMessageGeneratorFactory" class="com.liferay.portal.workflow.kaleo.runtime.notification.NotificationMessageGeneratorFactory">
+		<property name="notificationMessageGenerators">
+			<map>
+				<entry key="freemarker">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.FreeMarkerNotificationMessageGenerator" />
+				</entry>
+				<entry key="text">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.TextNotificationMessageGenerator" />
+				</entry>
+				<entry key="velocity">
+					<bean class="com.liferay.portal.workflow.kaleo.runtime.notification.VelocityNotificationMessageGenerator" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<!-- Parser -->
+
+	<bean id="com.liferay.portal.workflow.kaleo.parser.WorkflowModelParser" class="com.liferay.portal.workflow.kaleo.parser.XMLWorkflowModelParser" />
+</beans>

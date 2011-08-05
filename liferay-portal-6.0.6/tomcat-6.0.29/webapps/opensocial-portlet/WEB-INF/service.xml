@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 5.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_5_2_0.dtd">
+
+<service-builder package-path="com.liferay.opensocial">
+	<namespace>OpenSocial</namespace>
+	<entity name="Gadget" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="gadgetId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="name" type="String"></column>
+		<column name="url" type="String"></column>
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="name"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId"></finder-column>
+		</finder>
+	</entity>
+	<exceptions>
+		<exception>GadgetName</exception>
+		<exception>GadgetURL</exception>
+	</exceptions>
+</service-builder>

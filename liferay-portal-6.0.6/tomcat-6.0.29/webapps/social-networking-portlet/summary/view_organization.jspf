@@ -1,0 +1,69 @@
+<%
+/**
+ * Copyright (c) 2000-2011 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+%>
+
+<div class="summary-container">
+	<h2>
+		<%= HtmlUtil.escape(organization.getName()) %>
+	</h2>
+
+	<c:if test="<%= themeDisplay.isSignedIn() %>">
+		<c:choose>
+			<c:when test="<%= SocialRequestLocalServiceUtil.hasRequest(user.getUserId(), Organization.class.getName(), organization.getOrganizationId(), MembersRequestKeys.ADD_MEMBER, SocialRequestConstants.STATUS_PENDING) %>">
+				<div class="portlet-msg-info join-organization pending">
+					<liferay-ui:message key="membership-requested" />
+				</div>
+			</c:when>
+			<c:when test="<%= UserLocalServiceUtil.hasOrganizationUser(organization.getOrganizationId(), user.getUserId()) %>">
+
+				<%
+				PortletURL leaveOrganizationURL = renderResponse.createActionURL();
+
+				leaveOrganizationURL.setParameter(ActionRequest.ACTION_NAME, "leaveOrganization");
+				leaveOrganizationURL.setParameter("redirect", currentURL);
+
+				String leaveOrganizationHREF = "javascript:if (confirm('" + LanguageUtil.get(pageContext, "are-you-sure-you-want-to-leave-this-organization") + "')) { submitForm(document.hrefFm, '" + leaveOrganizationURL + "'); }";
+				%>
+
+				<p class="leave-organization">
+					<liferay-ui:icon
+						image="leave"
+						message="leave-organization"
+						url="<%= leaveOrganizationHREF %>"
+						label="<%= true %>"
+					/>
+				</p>
+			</c:when>
+			<c:otherwise>
+
+				<%
+				PortletURL joinOrganizationURL = renderResponse.createActionURL();
+
+				joinOrganizationURL.setParameter(ActionRequest.ACTION_NAME, "joinOrganization");
+				joinOrganizationURL.setParameter("redirect", currentURL);
+				%>
+
+				<p class="join-organization">
+					<liferay-ui:icon
+						image="join"
+						message="join-organization"
+						url="<%= joinOrganizationURL.toString() %>"
+						label="<%= true %>"
+					/>
+				</p>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+</div>

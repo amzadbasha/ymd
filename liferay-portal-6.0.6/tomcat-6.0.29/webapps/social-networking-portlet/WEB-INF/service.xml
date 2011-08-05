@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.0.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_0_0.dtd">
+
+<service-builder package-path="com.liferay.socialnetworking">
+	<namespace>SN</namespace>
+	<entity name="MeetupsEntry" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="meetupsEntryId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="title" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="startDate" type="Date"></column>
+		<column name="endDate" type="Date"></column>
+		<column name="totalAttendees" type="int"></column>
+		<column name="maxAttendees" type="int"></column>
+		<column name="price" type="double"></column>
+		<column name="thumbnailId" type="long"></column>
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="startDate"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="CompanyId" return-type="Collection">
+			<finder-column name="companyId"></finder-column>
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="MeetupsRegistration" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="meetupsRegistrationId" type="long" primary="true"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="meetupsEntryId" type="long"></column>
+		<column name="status" type="int"></column>
+		<column name="comments" type="String"></column>
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="modifiedDate"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="MeetupsEntryId" return-type="Collection">
+			<finder-column name="meetupsEntryId"></finder-column>
+		</finder>
+		<finder name="U_ME" return-type="MeetupsRegistration">
+			<finder-column name="userId"></finder-column>
+			<finder-column name="meetupsEntryId"></finder-column>
+		</finder>
+		<finder name="ME_S" return-type="Collection">
+			<finder-column name="meetupsEntryId"></finder-column>
+			<finder-column name="status"></finder-column>
+		</finder>
+	</entity>
+	<entity name="WallEntry" local-service="true" remote-service="false">
+		<!-- PK fields -->
+		<column name="wallEntryId" type="long" primary="true"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<!-- Other fields -->
+		<column name="comments" type="String"></column>
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate"></order-column>
+		</order>
+		<!-- Finder methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder name="G_U" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+	</entity>
+	<exceptions>
+		<exception>MeetupsEntryEndDate</exception>
+		<exception>MeetupsEntryStartDate</exception>
+	</exceptions>
+</service-builder>
